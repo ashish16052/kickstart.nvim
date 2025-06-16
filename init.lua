@@ -770,6 +770,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        python = { 'ruff-fix', 'ruff-format' },
         typescript = { 'prettier', stop_after_first = true },
         javascript = { 'prettier', stop_after_first = true },
         json = { 'prettier', stop_after_first = true },
