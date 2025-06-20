@@ -674,6 +674,15 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
+        -- Use ruff for Python linting/formatting (matches VS Code setup)
+        ruff = {
+          init_options = {
+            settings = {
+              -- Use project's ruff.toml automatically
+              configurationPreference = "filesystemFirst",
+            }
+          }
+        },
         pyright = {},
         angularls = {},
         -- rust_analyzer = {},
