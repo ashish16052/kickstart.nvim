@@ -797,6 +797,7 @@ require('lazy').setup({
         json = { 'prettier', stop_after_first = true },
         css = { 'prettier', stop_after_first = true },
         scss = { 'prettier', stop_after_first = true },
+        html = { 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
       },
