@@ -687,6 +687,12 @@ require('lazy').setup({
         angularls = {},
         -- TypeScript/JavaScript language server
         ts_ls = {},
+        -- ESLint language server for additional linting
+        eslint = {
+          settings = {
+            workingDirectory = { mode = "auto" },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
