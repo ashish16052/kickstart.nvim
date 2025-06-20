@@ -695,6 +695,8 @@ require('lazy').setup({
         },
         -- CSS/SCSS language server
         cssls = {},
+        -- HTML language server
+        html = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
