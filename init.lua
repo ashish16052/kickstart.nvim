@@ -1042,5 +1042,41 @@ require('lazy').setup({
   },
 })
 
+-- [[ Auto-format and code actions on save ]]
+-- Replicate VS Code behavior for format on save and organize imports
+
+-- Auto-organize imports on save for Python (matches VS Code ruff setup)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  callback = function()
+    vim.lsp.buf.code_action({
+      context = { only = { "source.organizeImports" } },
+      apply = true,
+    })
+  end,
+})
+
+-- ESLint fix all on save for TypeScript/JavaScript files
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.ts", "*.js", "*.tsx", "*.jsx" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      context = { only = { "source.fixAll.eslint" } },
+      apply = true,
+    })
+  end,
+})
+
+-- Stylelint fix all on save for CSS/SCSS files
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.css", "*.scss" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      context = { only = { "source.fixAll.stylelint" } },
+      apply = true,
+    })
+  end,
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
