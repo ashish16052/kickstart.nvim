@@ -995,14 +995,7 @@ require('lazy').setup({
   -- you can continue same window with `<space>sr` which resumes last telescope search
   --
   -- copilot plugin
-  {
-    'github/copilot.vim',
-    config = function()
-      vim.g.copilot_filetypes = {
-        gitcommit = true, -- override default
-      }
-    end,
-  },
+  'github/copilot.vim',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
